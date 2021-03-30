@@ -1,0 +1,36 @@
+
+cases = int(input())
+
+i = 0
+
+answerArray = []
+while i < cases:
+    
+    length = input()
+    works = "true"
+    sequence = input()
+    #print (sequence + " sequence")
+    seqArray = list(sequence)
+    
+    for x in seqArray:
+        #print(x)
+        if x == "U":
+           print("Error RNA nucleobases found!")
+           works = "false"
+           continue
+        if x == "A":
+            answerArray.insert(len(answerArray), "T")
+            #print("T")
+        if x == "T":
+            answerArray.insert(len(answerArray), "A")
+            #print("A")
+        if x == "C":
+            answerArray.insert(len(answerArray), "G")
+            #print("G")
+        if x == "G":
+            answerArray.insert(len(answerArray), "C")
+            #print("C")
+    if works == "true":
+        print(*answerArray, sep = "")   
+    answerArray.clear()
+    i += 1
